@@ -1,9 +1,9 @@
 
 (function() {
-    var selfieCam, takeSelfie, imageProcessor, selfies;
+    var selfieCam, takeSelfie, imageProcessor, selfies, takeSelfieButton;
     function startup(){
         selfieCam = document.getElementById('selfie-cam');
-        takeSelfieButton = document.getElementById("takeSelfieButton"),
+        takeSelfieButton = document.getElementById('takeSelfieButton'),
         imageProcessor = document.getElementById('image-processor');
         selfies = document.getElementById('selfies');
 
@@ -22,7 +22,7 @@
                 selfieCam.src = streamURL;
                 selfieCam.play();
             }, function (error) {
-                console.warn(error);
+                console.log(error);
             });    
         }   
 
@@ -30,6 +30,7 @@
     }
     function takeSelfie() {
         var context = imageProcessor.getContext('2d');
+        console.log(selfieCam)
         context.drawImage(selfieCam, 0, 0, 640, 480);
         var imageURL = imageProcessor.toDataURL();
 
