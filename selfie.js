@@ -11,7 +11,7 @@ function startup(){
             window.URL = window.URL || webkitURL;
             var streamURL = window.URL.createObjectURL(stream);
             selfieCam.src =streamURL;
-
+            selfieCam.play();
         }, function (error) {
             console.warn(error);
         });    
