@@ -2,11 +2,13 @@
 (function() {
     var selfieCam, takeSelfie, imageProcessor, selfies;
     function startup(){
-        var selfieCam = document.getElementById('selfie-cam');
-            takeSelfieButton = document.getElementById("takeSelfieButton"),
-            imageProcessor = document.getElementById('image-processor');
-            selfies = document.getElementById('selfies');
+        selfieCam = document.getElementById('selfie-cam');
+        takeSelfieButton = document.getElementById("takeSelfieButton"),
+        imageProcessor = document.getElementById('image-processor');
+        selfies = document.getElementById('selfies');
 
+        imageProcessor.width = 640;
+        imageProcessor.height = 480;
 
         navigator.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
         
@@ -24,7 +26,7 @@
             });    
         }   
 
-        takeSelfieButton.addEventListener('click', takeSelfie)
+        takeSelfieButton.addEventListener('click', takeSelfie);
     }
     function takeSelfie() {
         var context = imageProcessor.getContext('2d');
