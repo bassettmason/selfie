@@ -1,3 +1,6 @@
 #image-processor {
 display: none;
 }
+img {
+  width: 100px;
+}

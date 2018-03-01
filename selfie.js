@@ -30,7 +30,6 @@
     }
     function takeSelfie() {
         var context = imageProcessor.getContext('2d');
-        console.log(selfieCam)
         context.drawImage(selfieCam, 0, 0, 640, 480);
         var imageURL = imageProcessor.toDataURL();
 
